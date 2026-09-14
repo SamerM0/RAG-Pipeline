@@ -1,0 +1,16 @@
+User-agent: *
+Disallow: /robots-disallowed
+Crawl-delay: 2
+
+User-agent: Googlebot
+Disallow: /api/
+Disallow: /robots-disallowed
+Crawl-delay: 2
+
+User-agent: Bingbot
+Disallow: /api/
+Disallow: /robots-disallowed
+Crawl-delay: 2
+
+Sitemap: https://web-scraping.dev/sitemap.xml
+Sitemap: https://web-scraping.dev/sitemap-index.xml

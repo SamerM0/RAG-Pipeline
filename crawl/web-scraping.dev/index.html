@@ -1,0 +1,666 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://web-scraping.dev/assets/css/main.css"/>
+    <link rel="stylesheet" href="https://web-scraping.dev/assets/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://web-scraping.dev/assets/css/bootstrap-icons.css"/>
+    <link rel="stylesheet" href="https://web-scraping.dev/assets/css/highlight-nord.css"/>
+    <link rel="icon" href="https://web-scraping.dev/assets/media/icon.png" type="image/png" />
+    <script src="https://web-scraping.dev/assets/js/cash.min.js"></script>
+    <script src="https://web-scraping.dev/assets/js/main.js"></script>
+    <script src="https://web-scraping.dev/assets/js/bootstrap.js"></script>
+    
+
+
+<title>web-scraping.dev - Web Scraping Testing & Learning Platform</title>
+<meta name="description" content="Mock e-commerce website for web scraping testing and learning. Practice scraping with realistic scenarios including pagination, authentication, GraphQL, CSRF protection and more." />
+<meta name="keywords" content="webscraping,mock,testing,education,scraping tutorial,web scraping,testing,mock website,e-commerce,scraping tutorial" />
+<meta name="author" content="ScrapFly" />
+<meta name="robots" content="index, follow" />
+<link rel="canonical" href="https://web-scraping.dev/" />
+
+
+<meta property="og:site_name" content="web-scraping.dev" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="web-scraping.dev - Web Scraping Testing & Learning Platform" />
+<meta property="og:description" content="Mock e-commerce website for web scraping testing and learning. Practice scraping with realistic scenarios including pagination, authentication, GraphQL, CSRF protection and more." />
+<meta property="og:url" content="https://web-scraping.dev/" />
+<meta property="og:image" content="https://web-scraping.dev/banners/index.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="web-scraping.dev - Web Scraping Testing & Learning Platform" />
+<meta property="og:locale" content="en_US" />
+<meta property="article:published_time" content="2023-05-20T00:00:00.000Z" />
+<meta property="article:modified_time" content="2023-05-20T00:00:00.000Z" />
+<meta property="article:tag" content="webscraping,mock,testing,education,scraping tutorial" />
+<meta property="article:publisher" content="https://web-scraping.dev/" />
+
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="web-scraping.dev - Web Scraping Testing & Learning Platform" />
+<meta name="twitter:description" content="Mock e-commerce website for web scraping testing and learning. Practice scraping with realistic scenarios including pagination, authentication, GraphQL, CSRF protection and more." />
+<meta name="twitter:url" content="https://web-scraping.dev/" />
+<meta name="twitter:image" content="https://web-scraping.dev/banners/index.png" />
+<meta name="twitter:image:alt" content="web-scraping.dev - Web Scraping Testing & Learning Platform" />
+<meta name="twitter:site" content="@Scrapfly_dev" />
+<meta name="twitter:creator" content="@Scrapfly_dev" />
+
+
+<meta name="theme-color" content="#4ea8f1" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "web-scraping.dev",
+  "alternateName": "Web Scraping Dev",
+  "url": "https://web-scraping.dev/",
+  "description": "Mock e-commerce website for web scraping testing and learning",
+  "publisher": {
+    "@type": "Organization",
+    "name": "ScrapFly",
+    "url": "https://scrapfly.io",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://web-scraping.dev/assets/media/icon.png"
+    },
+    "sameAs": [
+      "https://twitter.com/Scrapfly_dev",
+      "https://github.com/scrapfly"
+    ]
+  },
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": {
+      "@type": "EntryPoint",
+      "urlTemplate": "https://web-scraping.dev/products?search={search_term_string}"
+    },
+    "query-input": "required name=search_term_string"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "EducationalOrganization",
+  "name": "web-scraping.dev",
+  "url": "https://web-scraping.dev/",
+  "description": "Educational platform for learning web scraping through practical, hands-on scenarios",
+  "educationalUse": "Training",
+  "educationalLevel": "Beginner to Advanced",
+  "teaches": [
+    "Web Scraping",
+    "Data Extraction",
+    "Browser Automation",
+    "API Integration",
+    "Web Development Patterns"
+  ]
+}
+</script>
+
+  </head>
+  <body>
+    
+    <nav class="navbar navbar-expand-lg navbar-light">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="https://web-scraping.dev/">web-scraping.dev</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle text-center" href="#" id="headersDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Docs
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="headersDropdown">
+                <li><a class="dropdown-item" href="/docs">API</a></li>
+                <li><a class="dropdown-item" href="/api/graphql">Graphql</a></li>
+              </ul>
+            </li>
+            <li class="nav-item"><a class="nav-link" aria-current="page" href="https://web-scraping.dev/products">Products</a></li>
+            <li class="nav-item"><a class="nav-link" aria-current="page" href="https://web-scraping.dev/reviews">Reviews</a></li>
+            <li class="nav-item"><a class="nav-link" aria-current="page" href="https://web-scraping.dev/testimonials">Testimonials</a></li>
+            <li class="nav-item"><a class="nav-link" aria-current="page" href="https://web-scraping.dev/file-download">File Download</a></li>
+            <li class="nav-item"><a class="nav-link" aria-current="page" href="https://web-scraping.dev/mcp-tools">MCP Tools</a></li>
+          </ul>
+          <ul class="navbar-nav mb-2 mb-lg-0">
+            
+            <li class="nav-item"><a class="nav-link" aria-current="page" href="https://web-scraping.dev/login">login</a></li>
+            
+            <li class="nav-item cart-preview">
+              <div class="cart-icon">
+                <svg width="25" height="24.72" fill="none" version="1.1" viewBox="0 0 .75 .7415" xmlns="http://www.w3.org/2000/svg">
+                 <path d="m0.1345 0.1046h0.511c0.05191 0 0.08857 0.05086 0.07215 0.1001l-0.06338 0.1901c-0.01035 0.03105-0.03941 0.052-0.07215 0.052h-0.3988m-0.04889-0.3422-0.00154-0.01076c-0.00535-0.03747-0.03744-0.0653-0.07529-0.0653h-0.0291m0.1059 0.07605 0.04889 0.3422m0 0 0.00697 0.04878c0.00535 0.03747 0.03744 0.0653 0.07529 0.0653h0.3333m0 0c-0.042 0-0.07605 0.03405-0.07605 0.07605s0.03405 0.07605 0.07605 0.07605c0.042 0 0.07605-0.03405 0.07605-0.07605 0-0.042-0.03405-0.07605-0.07605-0.07605zm-0.2282 0.07605c0 0.042-0.03405 0.07605-0.07605 0.07605-0.042 0-0.07605-0.03405-0.07605-0.07605 0-0.042 0.03405-0.07605 0.07605-0.07605 0.042 0 0.07605 0.03405 0.07605 0.07605z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width=".05704"/>
+                </svg>
+                <sup class="cart-count"></sup>
+                <div class="cart-data">
+                  <div class="cart-items"></div>
+                  <div class="cart-meta"></div>
+                  <div class="cart-control">
+                  <button class="btn btn-primary btn-rounded cart-clear btn-danger">Clear</button>
+                  <a href="/cart"><button class="btn btn-primary btn-rounded cart-continue btn-success">Continue</button></a>
+                </div>
+              </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    
+    <div class="main">
+        
+<div class="hero-section">
+  <div class="container">
+    <div class="hero-content">
+      <h1 class="hero-title">web-scraping.dev</h1>
+      <p class="hero-subtitle">A realistic e-commerce testing platform for web scraping developers</p>
+      <p class="hero-description">
+        Practice web scraping with <strong>19 realistic scenarios</strong> covering pagination, authentication,
+        GraphQL APIs, CSRF protection, and more. Safe, legal, and designed for learning.
+      </p>
+      <div class="hero-badges">
+        <span class="hero-badge">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+            <path d="M1 2.828c.885-.37 2.154-.769 3.388-.893 1.33-.134 2.458.063 3.112.752v9.746c-.935-.53-2.12-.603-3.213-.493-1.18.12-2.37.461-3.287.811V2.828zm7.5-.141c.654-.689 1.782-.886 3.112-.752 1.234.124 2.503.523 3.388.893v9.923c-.918-.35-2.107-.692-3.287-.81-1.094-.111-2.278-.039-3.213.492V2.687zM8 1.783C7.015.936 5.587.81 4.287.94c-1.514.153-3.042.672-3.994 1.105A.5.5 0 0 0 0 2.5v11a.5.5 0 0 0 .707.455c.882-.4 2.303-.881 3.68-1.02 1.409-.142 2.59.087 3.223.877a.5.5 0 0 0 .78 0c.633-.79 1.814-1.019 3.222-.877 1.378.139 2.8.62 3.681 1.02A.5.5 0 0 0 16 13.5v-11a.5.5 0 0 0-.293-.455c-.952-.433-2.48-.952-3.994-1.105C10.413.809 8.985.936 8 1.783z"/>
+          </svg>
+          Realistic Scenarios
+        </span>
+        <span class="hero-badge">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+            <path d="M9.669.864 8 0 6.331.864l-1.858.282-.842 1.68-1.337 1.32L2.6 6l-.306 1.854 1.337 1.32.842 1.68 1.858.282L8 12l1.669-.864 1.858-.282.842-1.68 1.337-1.32L13.4 6l.306-1.854-1.337-1.32-.842-1.68L9.669.864zm1.196 1.193.684 1.365 1.086 1.072L12.387 6l.248 1.506-1.086 1.072-.684 1.365-1.51.229L8 10.874l-1.355-.702-1.51-.229-.684-1.365-1.086-1.072L3.614 6l-.25-1.506 1.087-1.072.684-1.365 1.51-.229L8 1.126l1.356.702 1.509.229z"/>
+            <path d="M4 11.794V16l4-1 4 1v-4.206l-2.018.306L8 13.126 6.018 12.1 4 11.794z"/>
+          </svg>
+          Challenging
+        </span>
+        <span class="hero-badge">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+            <path d="M2.5 1A1.5 1.5 0 0 0 1 2.5v11A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-11A1.5 1.5 0 0 0 13.5 1h-11zm11 1a.5.5 0 0 1 .5.5V8H2V2.5a.5.5 0 0 1 .5-.5h11zM2 9h12v4.5a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5V9z"/>
+            <path d="M3 10a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v1a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1v-1z"/>
+          </svg>
+          CI Testing Suite
+        </span>
+      </div>
+      <div class="hero-actions">
+        <a href="#scenarios" class="btn btn-primary btn-lg">Explore Scenarios</a>
+        <a href="/products" class="btn btn-outline-primary btn-lg">Try Demo</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container" id="intro">
+  <div class="resources-section">
+    <h3 class="section-label">Used By</h3>
+    <div class="resources-grid">
+      <a href="https://scrapfly.io/docs" class="resource-link" target="_blank" rel="noopener noreferrer">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
+          <path d="M1 2.828c.885-.37 2.154-.769 3.388-.893 1.33-.134 2.458.063 3.112.752v9.746c-.935-.53-2.12-.603-3.213-.493-1.18.12-2.37.461-3.287.811V2.828zm7.5-.141c.654-.689 1.782-.886 3.112-.752 1.234.124 2.503.523 3.388.893v9.923c-.918-.35-2.107-.692-3.287-.81-1.094-.111-2.278-.039-3.213.492V2.687zM8 1.783C7.015.936 5.587.81 4.287.94c-1.514.153-3.042.672-3.994 1.105A.5.5 0 0 0 0 2.5v11a.5.5 0 0 0 .707.455c.882-.4 2.303-.881 3.68-1.02 1.409-.142 2.59.087 3.223.877a.5.5 0 0 0 .78 0c.633-.79 1.814-1.019 3.222-.877 1.378.139 2.8.62 3.681 1.02A.5.5 0 0 0 16 13.5v-11a.5.5 0 0 0-.293-.455c-.952-.433-2.48-.952-3.994-1.105C10.413.809 8.985.936 8 1.783z"/>
+        </svg>
+        ScrapFly Documentation
+      </a>
+      <a href="https://scrapfly.io/academy" class="resource-link" target="_blank" rel="noopener noreferrer">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
+          <path d="M8.211 2.047a.5.5 0 0 0-.422 0l-7.5 3.5a.5.5 0 0 0 .025.917l7.5 3a.5.5 0 0 0 .372 0L14 7.14V13a1 1 0 0 0-1 1v2h3v-2a1 1 0 0 0-1-1V6.739l.686-.275a.5.5 0 0 0 .025-.917l-7.5-3.5ZM8 8.46 1.758 5.965 8 3.052l6.242 2.913L8 8.46Z"/>
+          <path d="M4.176 9.032a.5.5 0 0 0-.656.327l-.5 1.7a.5.5 0 0 0 .294.605l4.5 1.8a.5.5 0 0 0 .372 0l4.5-1.8a.5.5 0 0 0 .294-.605l-.5-1.7a.5.5 0 0 0-.656-.327L8 10.466 4.176 9.032Zm-.068 1.873.22-.748 3.496 1.311a.5.5 0 0 0 .352 0l3.496-1.311.22.748L8 12.46l-3.892-1.556Z"/>
+        </svg>
+        Web Scraping Academy
+      </a>
+      <a href="https://scrapfly.io/blog" class="resource-link" target="_blank" rel="noopener noreferrer">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
+          <path d="M0 2.5A1.5 1.5 0 0 1 1.5 1h11A1.5 1.5 0 0 1 14 2.5v10.528c0 .3-.05.654-.238.972h.738a.5.5 0 0 0 .5-.5v-9a.5.5 0 0 1 1 0v9a1.5 1.5 0 0 1-1.5 1.5H1.497A1.497 1.497 0 0 1 0 13.5v-11zM12 14c.37 0 .654-.211.853-.441.092-.106.147-.279.147-.531V2.5a.5.5 0 0 0-.5-.5h-11a.5.5 0 0 0-.5.5v11c0 .278.223.5.497.5H12z"/>
+          <path d="M2 3h10v2H2V3zm0 3h4v3H2V6zm0 4h4v1H2v-1zm0 2h4v1H2v-1zm5-6h2v1H7V6zm3 0h2v1h-2V6zM7 8h2v1H7V8zm3 0h2v1h-2V8zm-3 2h2v1H7v-1zm3 0h2v1h-2v-1zm-3 2h2v1H7v-1zm3 0h2v1h-2v-1z"/>
+        </svg>
+        Blog & Tutorials
+      </a>
+    </div>
+  </div>
+
+  <div class="scenarios-section">
+    <div id="changelog">
+    <h2 id="scenarios" class="section-title">
+      <span>Scraping Scenarios</span>
+      <span class="scenario-count">50 Scenarios</span>
+    </h2>
+    <p class="section-description">
+      Real-world web patterns you'll encounter in production scraping projects.
+      Each scenario is tagged with difficulty level and includes working code examples.
+    </p>
+    
+    
+    <div class="table-responsive">
+      <table class="table table-hover table-sm scenarios-table">
+        <thead>
+          <tr>
+            <th>Scenario</th>
+            <th>Path</th>
+            <th>Level</th>
+            <th>Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          
+          <tr onclick="window.location='https://web-scraping.dev/products';" style="cursor:pointer;">
+            <td><strong>Static Paging</strong></td>
+            <td><code>https://web-scraping.dev/products</code></td>
+            <td><span class="badge bg-success difficulty-badge">Beginner</span></td>
+            <td>HTML-based server-side item paging where each page is its own URL.</td>
+          </tr>
+          
+          <tr onclick="window.location='https://web-scraping.dev/testimonials';" style="cursor:pointer;">
+            <td><strong>Endless Scroll Paging</strong></td>
+            <td><code>https://web-scraping.dev/testimonials</code></td>
+            <td><span class="badge bg-warning difficulty-badge">Intermediate</span></td>
+            <td>Dynamic client side paging where new items appear as user scrolls.</td>
+          </tr>
+          
+          <tr onclick="window.location='https://web-scraping.dev/testimonials';" style="cursor:pointer;">
+            <td><strong>Secret API Token</strong></td>
+            <td><code>https://web-scraping.dev/testimonials</code></td>
+            <td><span class="badge bg-warning difficulty-badge">Intermediate</span></td>
+            <td>X-Secret-Token used to lock access to hidden APIs.</td>
+          </tr>
+          
+          <tr onclick="window.location='https://web-scraping.dev/reviews';" style="cursor:pointer;">
+            <td><strong>Endless Button Paging</strong></td>
+            <td><code>https://web-scraping.dev/reviews</code></td>
+            <td><span class="badge bg-warning difficulty-badge">Intermediate</span></td>
+            <td>Dynamic paging where new items appear on Load More click.</td>
+          </tr>
+          
+          <tr onclick="window.location='https://web-scraping.dev/reviews';" style="cursor:pointer;">
+            <td><strong>GraphQL Background Requests</strong></td>
+            <td><code>https://web-scraping.dev/reviews</code></td>
+            <td><span class="badge bg-danger difficulty-badge">Advanced</span></td>
+            <td>Data loaded via JavaScript through a backend GraphQL API.</td>
+          </tr>
+          
+          <tr onclick="window.location='https://web-scraping.dev/reviews';" style="cursor:pointer;">
+            <td><strong>Forced New Tab Links</strong></td>
+            <td><code>https://web-scraping.dev/reviews</code></td>
+            <td><span class="badge bg-success difficulty-badge">Beginner</span></td>
+            <td>Links forced to open in new tabs via different techniques.</td>
+          </tr>
+          
+          <tr onclick="window.location='https://web-scraping.dev/product/1';" style="cursor:pointer;">
+            <td><strong>Product HTML Markup</strong></td>
+            <td><code>https://web-scraping.dev/product/1</code></td>
+            <td><span class="badge bg-success difficulty-badge">Beginner</span></td>
+            <td>Basic e-commerce product structure and CSS class based markup.</td>
+          </tr>
+          
+          <tr onclick="window.location='https://web-scraping.dev/product/1';" style="cursor:pointer;">
+            <td><strong>Hidden Web Data</strong></td>
+            <td><code>https://web-scraping.dev/product/1</code></td>
+            <td><span class="badge bg-warning difficulty-badge">Intermediate</span></td>
+            <td>Review data hidden in HTML as JSON, loaded on page load.</td>
+          </tr>
+          
+          <tr onclick="window.location='https://web-scraping.dev/product/1';" style="cursor:pointer;">
+            <td><strong>Local Storage</strong></td>
+            <td><code>https://web-scraping.dev/product/1</code></td>
+            <td><span class="badge bg-warning difficulty-badge">Intermediate</span></td>
+            <td>Cart system powered by localStorage for client-side state.</td>
+          </tr>
+          
+          <tr onclick="window.location='https://web-scraping.dev/product/1';" style="cursor:pointer;">
+            <td><strong>CSRF Token Locks</strong></td>
+            <td><code>https://web-scraping.dev/product/1</code></td>
+            <td><span class="badge bg-danger difficulty-badge">Advanced</span></td>
+            <td>Load More reviews uses X-CSRF-Token header to block cross-site access.</td>
+          </tr>
+          
+          <tr onclick="window.location='https://web-scraping.dev/login';" style="cursor:pointer;">
+            <td><strong>Cookies Based Login</strong></td>
+            <td><code>https://web-scraping.dev/login</code></td>
+            <td><span class="badge bg-warning difficulty-badge">Intermediate</span></td>
+            <td>User authentication based on form request and cookies.</td>
+          </tr>
+          
+          <tr onclick="window.location='https://web-scraping.dev/login/iframe';" style="cursor:pointer;">
+            <td><strong>Iframe Login</strong></td>
+            <td><code>https://web-scraping.dev/login/iframe</code></td>
+            <td><span class="badge bg-warning difficulty-badge">Intermediate</span></td>
+            <td>Login form embedded in an iframe (SSO widget pattern).</td>
+          </tr>
+          
+          <tr onclick="window.location='https://web-scraping.dev/login';" style="cursor:pointer;">
+            <td><strong>PDF Downloads</strong></td>
+            <td><code>https://web-scraping.dev/login</code></td>
+            <td><span class="badge bg-warning difficulty-badge">Intermediate</span></td>
+            <td>Link and JS based file download triggers.</td>
+          </tr>
+          
+          <tr onclick="window.location='https://web-scraping.dev/login?cookies=';" style="cursor:pointer;">
+            <td><strong>Cookie Popup</strong></td>
+            <td><code>https://web-scraping.dev/login?cookies=</code></td>
+            <td><span class="badge bg-success difficulty-badge">Beginner</span></td>
+            <td>Cookie info modal popup that blocks the entire screen.</td>
+          </tr>
+          
+          <tr onclick="window.location='https://web-scraping.dev/blocked';" style="cursor:pointer;">
+            <td><strong>Example Block Page</strong></td>
+            <td><code>https://web-scraping.dev/blocked</code></td>
+            <td><span class="badge bg-success difficulty-badge">Beginner</span></td>
+            <td>Valid 200-status response that redirects to block notification.</td>
+          </tr>
+          
+          <tr onclick="window.location='https://web-scraping.dev/credentials';" style="cursor:pointer;">
+            <td><strong>Blocking Redirect (Invalid Referer)</strong></td>
+            <td><code>https://web-scraping.dev/credentials</code></td>
+            <td><span class="badge bg-danger difficulty-badge">Advanced</span></td>
+            <td>Page requires valid Referer header, otherwise redirects to blocked.</td>
+          </tr>
+          
+          <tr onclick="window.location='https://web-scraping.dev/blocked?persist=';" style="cursor:pointer;">
+            <td><strong>Persistent Cookie Blocking</strong></td>
+            <td><code>https://web-scraping.dev/blocked?persist=</code></td>
+            <td><span class="badge bg-danger difficulty-badge">Advanced</span></td>
+            <td>Using cookies to mark blocked clients for persistent blocking.</td>
+          </tr>
+          
+          <tr onclick="window.location='https://web-scraping.dev/file-download';" style="cursor:pointer;">
+            <td><strong>Form File Attachment Download</strong></td>
+            <td><code>https://web-scraping.dev/file-download</code></td>
+            <td><span class="badge bg-warning difficulty-badge">Intermediate</span></td>
+            <td>Form submission triggers file download with Content-Disposition header.</td>
+          </tr>
+          
+          <tr onclick="window.location='https://web-scraping.dev/ai-content-obfuscation';" style="cursor:pointer;">
+            <td><strong>AI Content Obfuscation</strong></td>
+            <td><code>https://web-scraping.dev/ai-content-obfuscation</code></td>
+            <td><span class="badge bg-warning difficulty-badge">Intermediate</span></td>
+            <td>Extract clean text from AI-obfuscated content using invisible Unicode.</td>
+          </tr>
+          
+          <tr onclick="window.location='https://web-scraping.dev/challenge-download';" style="cursor:pointer;">
+            <td><strong>Challenge + File Download</strong></td>
+            <td><code>https://web-scraping.dev/challenge-download</code></td>
+            <td><span class="badge bg-danger difficulty-badge">Advanced</span></td>
+            <td>Challenge bypass + file download with 403 status.</td>
+          </tr>
+          
+          <tr onclick="window.location='https://web-scraping.dev/bad-encoding';" style="cursor:pointer;">
+            <td><strong>Bad Encoding</strong></td>
+            <td><code>https://web-scraping.dev/bad-encoding</code></td>
+            <td><span class="badge bg-warning difficulty-badge">Intermediate</span></td>
+            <td>Pages with mismatched Content-Type charset headers.</td>
+          </tr>
+          
+          <tr onclick="window.location='https://web-scraping.dev/antibot/easy';" style="cursor:pointer;">
+            <td><strong>Antibot Challenge</strong></td>
+            <td><code>https://web-scraping.dev/antibot/easy</code></td>
+            <td><span class="badge bg-success difficulty-badge">Beginner</span></td>
+            <td>Simple antibot protection that blocks direct access.</td>
+          </tr>
+          
+          <tr onclick="window.location='/robots-disallowed';" style="cursor:pointer;">
+            <td><strong>Robots.txt Compliance Trap</strong></td>
+            <td><code>/robots-disallowed</code></td>
+            <td><span class="badge bg-info difficulty-badge">Crawler</span></td>
+            <td>Disallowed URL that returns 200. Conforming crawlers must not fetch.</td>
+          </tr>
+          
+          <tr onclick="window.location='/mcp-tools';" style="cursor:pointer;">
+            <td><strong>WebMCP Tools</strong></td>
+            <td><code>/mcp-tools</code></td>
+            <td><span class="badge bg-primary difficulty-badge">Intermediate</span></td>
+            <td>Page with registered MCP tools. Test native browser MCP with AI agents via Cloud Browser.</td>
+          </tr>
+          
+          <tr onclick="window.location='/classify-test/blocked';" style="cursor:pointer;">
+            <td><strong>Classify API: Blocked Fixture</strong></td>
+            <td><code>/classify-test/blocked</code></td>
+            <td><span class="badge bg-success difficulty-badge">Beginner</span></td>
+            <td>Returns a 403 Cloudflare-style challenge. Feed the response to POST /classify to exercise the block-detection pipeline.</td>
+          </tr>
+          
+          <tr onclick="window.location='/classify-test/clean';" style="cursor:pointer;">
+            <td><strong>Classify API: Clean Fixture</strong></td>
+            <td><code>/classify-test/clean</code></td>
+            <td><span class="badge bg-success difficulty-badge">Beginner</span></td>
+            <td>Returns a legitimate 200 JSON response. Feed it to POST /classify to verify the endpoint correctly reports blocked=false.</td>
+          </tr>
+          
+          <tr onclick="window.location='https://web-scraping.dev/storage-test';" style="cursor:pointer;">
+            <td><strong>LocalStorage Merge & Bomb</strong></td>
+            <td><code>https://web-scraping.dev/storage-test</code></td>
+            <td><span class="badge bg-danger difficulty-badge">Advanced</span></td>
+            <td>Test scrape-engine session storage merge across rescrapes. ?seed=1 plants keys, ?bomb=1 writes a 1MB value (rejected by 500KB cap), ?delete=k1 verifies removal propagates.</td>
+          </tr>
+          
+          
+          <tr onclick="window.location='/crawler-test-report';" style="cursor:pointer;">
+            <td><strong>Crawler Test Report Endpoint</strong></td>
+            <td><code>/crawler-test-report</code></td>
+            <td><span class="badge bg-info difficulty-badge">Crawler</span></td>
+            <td>Central JSON assertion endpoint. POST /reset to clear between runs.</td>
+          </tr>
+          
+          <tr onclick="window.location='/rate-limited';" style="cursor:pointer;">
+            <td><strong>Rate Limit & Politeness</strong></td>
+            <td><code>/rate-limited</code></td>
+            <td><span class="badge bg-info difficulty-badge">Crawler</span></td>
+            <td>429 with Retry-After: 5 after 3 req/10s.</td>
+          </tr>
+          
+          <tr onclick="window.location='/slow-section/page/1';" style="cursor:pointer;">
+            <td><strong>Crawl Delay Enforcement</strong></td>
+            <td><code>/slow-section/page/1</code></td>
+            <td><span class="badge bg-info difficulty-badge">Crawler</span></td>
+            <td>robots.txt Crawl-delay: 2 for /slow-section/.</td>
+          </tr>
+          
+          <tr onclick="window.location='/meta-noindex';" style="cursor:pointer;">
+            <td><strong>Meta Robots Directives</strong></td>
+            <td><code>/meta-noindex</code></td>
+            <td><span class="badge bg-info difficulty-badge">Crawler</span></td>
+            <td>Pages with meta noindex/nofollow.</td>
+          </tr>
+          
+          <tr onclick="window.location='/header-noindex';" style="cursor:pointer;">
+            <td><strong>X-Robots-Tag Header</strong></td>
+            <td><code>/header-noindex</code></td>
+            <td><span class="badge bg-info difficulty-badge">Crawler</span></td>
+            <td>Responses with X-Robots-Tag noindex/nofollow.</td>
+          </tr>
+          
+          <tr onclick="window.location='/canonical-tracking?utm_source=foo&session=bar';" style="cursor:pointer;">
+            <td><strong>Canonical URL Handling</strong></td>
+            <td><code>/canonical-tracking?utm_source=foo&session=bar</code></td>
+            <td><span class="badge bg-info difficulty-badge">Crawler</span></td>
+            <td>Tracking params with rel=canonical.</td>
+          </tr>
+          
+          <tr onclick="window.location='/session-vortex';" style="cursor:pointer;">
+            <td><strong>Session ID Vortex (Trap)</strong></td>
+            <td><code>/session-vortex</code></td>
+            <td><span class="badge bg-info difficulty-badge">Crawler</span></td>
+            <td>Every page produces 10 new sid-parameterized links.</td>
+          </tr>
+          
+          <tr onclick="window.location='/calendar/2024/01';" style="cursor:pointer;">
+            <td><strong>Infinite Calendar (Trap)</strong></td>
+            <td><code>/calendar/2024/01</code></td>
+            <td><span class="badge bg-info difficulty-badge">Crawler</span></td>
+            <td>Calendar with prev/next links across 2000-2100.</td>
+          </tr>
+          
+          <tr onclick="window.location='/redirect-chain/1';" style="cursor:pointer;">
+            <td><strong>Redirect Chain & Loops</strong></td>
+            <td><code>/redirect-chain/1</code></td>
+            <td><span class="badge bg-info difficulty-badge">Crawler</span></td>
+            <td>Chain of 10 redirects + loop detection.</td>
+          </tr>
+          
+          <tr onclick="window.location='/fragment-collapse';" style="cursor:pointer;">
+            <td><strong>Fragment & URL Normalization</strong></td>
+            <td><code>/fragment-collapse</code></td>
+            <td><span class="badge bg-info difficulty-badge">Crawler</span></td>
+            <td>Fragment-only and normalization variants.</td>
+          </tr>
+          
+          <tr onclick="window.location='/dup-a';" style="cursor:pointer;">
+            <td><strong>Content Deduplication</strong></td>
+            <td><code>/dup-a</code></td>
+            <td><span class="badge bg-info difficulty-badge">Crawler</span></td>
+            <td>Identical HTML with canonical. Tests dedup.</td>
+          </tr>
+          
+          <tr onclick="window.location='/js-links';" style="cursor:pointer;">
+            <td><strong>JS-only Link Discovery</strong></td>
+            <td><code>/js-links</code></td>
+            <td><span class="badge bg-info difficulty-badge">Crawler</span></td>
+            <td>Anchors injected by JS after DOMContentLoaded.</td>
+          </tr>
+          
+          <tr onclick="window.location='/linked-data';" style="cursor:pointer;">
+            <td><strong>JSON-LD Link Discovery</strong></td>
+            <td><code>/linked-data</code></td>
+            <td><span class="badge bg-info difficulty-badge">Crawler</span></td>
+            <td>Link only present inside a JSON-LD script tag.</td>
+          </tr>
+          
+          <tr onclick="window.location='/data-href';" style="cursor:pointer;">
+            <td><strong>data-href Link Discovery</strong></td>
+            <td><code>/data-href</code></td>
+            <td><span class="badge bg-info difficulty-badge">Crawler</span></td>
+            <td>Link attribute on a non-anchor element.</td>
+          </tr>
+          
+          <tr onclick="window.location='/header-link';" style="cursor:pointer;">
+            <td><strong>HTTP Link Header Discovery</strong></td>
+            <td><code>/header-link</code></td>
+            <td><span class="badge bg-info difficulty-badge">Crawler</span></td>
+            <td>Link: rel=next HTTP header points to target.</td>
+          </tr>
+          
+          <tr onclick="window.location='/base-tag';" style="cursor:pointer;">
+            <td><strong>HTML base Tag</strong></td>
+            <td><code>/base-tag</code></td>
+            <td><span class="badge bg-info difficulty-badge">Crawler</span></td>
+            <td>Relative links resolved against base href.</td>
+          </tr>
+          
+          <tr onclick="window.location='/huge-page';" style="cursor:pointer;">
+            <td><strong>Huge Response Body</strong></td>
+            <td><code>/huge-page</code></td>
+            <td><span class="badge bg-info difficulty-badge">Crawler</span></td>
+            <td>Streams ~50MB of HTML.</td>
+          </tr>
+          
+          <tr onclick="window.location='/slow-drip';" style="cursor:pointer;">
+            <td><strong>Slow Drip Response</strong></td>
+            <td><code>/slow-drip</code></td>
+            <td><span class="badge bg-info difficulty-badge">Crawler</span></td>
+            <td>1 byte/sec for 60s. Tests timeout behavior.</td>
+          </tr>
+          
+          <tr onclick="window.location='/wrong-content-length';" style="cursor:pointer;">
+            <td><strong>Wrong Content-Length</strong></td>
+            <td><code>/wrong-content-length</code></td>
+            <td><span class="badge bg-info difficulty-badge">Crawler</span></td>
+            <td>Header claims 100 bytes, body is 1000.</td>
+          </tr>
+          
+          <tr onclick="window.location='/redirect-external';" style="cursor:pointer;">
+            <td><strong>External Redirect</strong></td>
+            <td><code>/redirect-external</code></td>
+            <td><span class="badge bg-info difficulty-badge">Crawler</span></td>
+            <td>302 to example.com.</td>
+          </tr>
+          
+          <tr onclick="window.location='/mixed-content';" style="cursor:pointer;">
+            <td><strong>Mixed HTTP/HTTPS Content</strong></td>
+            <td><code>/mixed-content</code></td>
+            <td><span class="badge bg-info difficulty-badge">Crawler</span></td>
+            <td>Same URL under http and https.</td>
+          </tr>
+          
+          <tr onclick="window.location='/sitemap-index.xml';" style="cursor:pointer;">
+            <td><strong>Sitemap Index</strong></td>
+            <td><code>/sitemap-index.xml</code></td>
+            <td><span class="badge bg-info difficulty-badge">Crawler</span></td>
+            <td>50 child sitemaps x 100 URLs each.</td>
+          </tr>
+          
+          <tr onclick="window.location='/sitemap.xml.gz';" style="cursor:pointer;">
+            <td><strong>Gzipped Sitemap</strong></td>
+            <td><code>/sitemap.xml.gz</code></td>
+            <td><span class="badge bg-info difficulty-badge">Crawler</span></td>
+            <td>sitemap.xml as application/gzip.</td>
+          </tr>
+          
+          <tr onclick="window.location='/private/secret';" style="cursor:pointer;">
+            <td><strong>Basic Auth Wall</strong></td>
+            <td><code>/private/secret</code></td>
+            <td><span class="badge bg-info difficulty-badge">Crawler</span></td>
+            <td>401 + WWW-Authenticate: Basic.</td>
+          </tr>
+          
+          <tr onclick="window.location='/needs-consent';" style="cursor:pointer;">
+            <td><strong>Cookie Consent Flow</strong></td>
+            <td><code>/needs-consent</code></td>
+            <td><span class="badge bg-info difficulty-badge">Crawler</span></td>
+            <td>Multi-step cookie consent redirect.</td>
+          </tr>
+          
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<div class="sponsor-section">
+  <div class="container">
+    <p class="sponsor-label">Sponsored by</p>
+    <a href="https://scrapfly.io/?utm_source=web-scraping.dev&utm_medium=homepage&utm_campaign=sponsor" target="_blank" rel="noopener noreferrer" class="sponsor-link">
+      <img src="https://cdn.scrapfly.io/0.0.322/www/public/svg/logo-dashboard.svg?version=0.0.322" alt="ScrapFly Logo" class="sponsor-logo" loading="lazy">
+      <span class="sponsor-tagline">Best Web Scraping API</span>
+    </a>
+  </div>
+</div>
+
+
+    </div>
+    
+    <div class="container">
+      <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+        <div class="col-md-4 d-flex align-items-center">
+          <a title="learn web scraping at scrapfly academy for free!" href="https://scrapfly.io/academy" target="_blank" rel="noopener noreferrer">
+            <button class="btn btn-primary btn-sm btn-block">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"><g style="fill:#fff"><path d="M1087-226a.733.733 0 0 0-.72.597.646.646 0 0 0-.107-.01h-.02c-.01 0-.012 0-.019.002a.697.697 0 0 0-.648.814.698.698 0 0 0-.594.689c0 .042.01.085.014.13a.921.921 0 0 0-.075 1.364 1.077 1.077 0 0 0 .197 1.59.826.826 0 0 0 .251.851.83.83 0 0 0 .711.19.93.93 0 0 0 1.742-.454v-5.03a.736.736 0 0 0-.734-.735zm.506 5.76a.701.701 0 0 1-1.347.274.114.114 0 0 0-.141-.064.593.593 0 0 1-.587-.118.602.602 0 0 1-.16-.683v-.004a.622.622 0 0 1 .58-.378c.153 0 .153-.23 0-.23-.294 0-.57.15-.727.4a.85.85 0 0 1-.1-1.246.926.926 0 0 0 1.391-.798c0-.156-.231-.156-.228 0a.697.697 0 0 1-1.392 0 .701.701 0 0 1 .306-.554.114.114 0 0 0 .045-.13.453.453 0 0 1-.025-.14c0-.258.209-.468.472-.468l.024.003a.115.115 0 0 0 .118-.145v-.007c0-.014 0-.027-.01-.04a.448.448 0 0 1-.028-.15c0-.255.205-.463.46-.467a.469.469 0 0 1 .458.468c0 .153.23.153.23 0a.698.698 0 0 0-.353-.605.504.504 0 0 1 1.006.055v5.03z" style="fill:#fff;stroke-width:.0763" transform="matrix(3.5471 0 0 3.5471 -3847.064 801.682)"></path><path d="M94 45.3c0-3.68-1.66-7.12-4.49-9.41.12-.561.182-1.13.184-1.71 0-4.58-3.39-8.38-7.78-9.04.099-.513.149-1.03.149-1.56 0-4.88-3.84-8.86-8.66-9.11a1.49 1.49 0 0 0-.242-.024c-.04 0-.079.005-.12.006-.04-.001-.079-.006-.12-.006-.458 0-.919.041-1.41.126a9.586 9.586 0 0 0-9.44-7.82c-5.31 0-9.63 4.32-9.63 9.63v65.9c0 6.72 5.47 12.2 12.2 12.2 4.46 0 8.51-2.41 10.6-6.25a9.43 9.43 0 0 0 1.4.198c2.9.185 5.73-.766 7.93-2.69 2.19-1.91 3.52-4.61 3.7-7.51.077-1.23-.06-2.46-.403-3.64 3.8-2.69 6.03-6.95 6.03-11.6 0-3.38-1.22-6.64-3.44-9.22 2.24-2.27 3.51-5.3 3.51-8.46zM90.94 63c0 3.48-1.58 6.68-4.3 8.82-2.01-3.2-5.57-5.24-9.43-5.24-2 0-2 3 0 3a8.157 8.157 0 0 1 7.58 5.21c.41 1.09.592 2.19.521 3.27a7.922 7.922 0 0 1-2.68 5.45 7.865 7.865 0 0 1-5.75 1.95c-.594-.039-1.21-.167-1.93-.402a1.507 1.507 0 0 0-1.85.84 9.164 9.164 0 0 1-8.46 5.6c-5.07 0-9.19-4.12-9.19-9.19v-65.9a6.635 6.635 0 0 1 6.63-6.63c3.4 0 6.19 2.56 6.56 5.91-2.75 1.58-4.61 4.54-4.61 7.93 0 2 3 2 3 0 0-3.34 2.69-6.06 6.02-6.13 3.33.065 6.02 2.79 6.02 6.13 0 .622-.117 1.27-.359 1.97-.07.202-.094.417-.074.63l-.01.035a1.505 1.505 0 0 0 1.55 1.87c.131-.01.262-.026.392-.046a6.15 6.15 0 0 1 6.14 6.14c0 .572-.103 1.16-.322 1.85-.203.635.038 1.33.591 1.7a9.1 9.1 0 0 1 4.01 7.24l-.001.012c0 5.03-4.09 9.12-9.12 9.12-5.03 0-9.12-4.09-9.12-9.12 0-2-3-2-3 0 0 6.68 5.44 12.1 12.1 12.1 2.23 0 4.31-.615 6.11-1.67 1.92 2.09 2.98 4.76 2.98 7.55z" style="fill:#fff" transform="matrix(.27072 0 0 .27072 -1.447 -1.662)"></path></g></svg>
+            <span>SCRAPFLY ACADEMY</span>
+            </button>
+          </a>
+        </div>
+
+        <ul class="nav col-md-8 justify-content-end list-unstyled d-flex align-items-center gap-3">
+          <li><a href="/docs" class="text-muted text-decoration-none" title="API Documentation">API Docs</a></li>
+          <li><a href="/sitemap.xml" class="text-muted text-decoration-none" title="Sitemap">Sitemap</a></li>
+          <li><a href="https://scrapfly.io/blog" target="_blank" rel="noopener noreferrer" class="text-muted text-decoration-none" title="Web Scraping Blog">Blog</a></li>
+          <li><a href="https://github.com/scrapfly" target="_blank" rel="noopener noreferrer" class="text-muted text-decoration-none" title="ScrapFly on GitHub">GitHub</a></li>
+          <li class="text-muted meta-version">v1.3.0</li>
+          <li class="text-muted meta-created-by">made by <a href="https://web-scraping.dev/" rel="noopener noreferrer" target="_blank">ScrapFly</a>
+          <svg width="20" height="20" fill="#000000" version="1.1" viewBox="0 0 542.2 542.2" xml:space="preserve" xmlns="http://www.w3.org/2000/svg">
+          <g fill="#4ea8f1">
+            <g fill="#4ea8f1">
+              <path d="m411.3 21.42c-65.34-59.9-140.2 24.84-140.2 24.84h-0.545s-74.88-84.74-140.2-24.84c-63.28 58.02-11.38 187.4 126.7 250.3-2.008 3.672-2.037 4.877-2.037 4.877l-10.08 27.5c-4.829 8.798-0.918 29.01 8.73 29.01h8.616c0.832 71.74-11.74 182 60.94 208.3 14.48 5.231 20.66-17.8 6.33-22.97-54.23-19.6-44.25-123-43.87-185.3h2.917c9.648 0 13.56-21.61 8.73-30.41-4.819-8.797-9.257-22.16-9.257-22.16l-2.592-6.714c139.5-62.49 189.4-194.1 125.8-252.4z" fill="#4ea8f1"/>
+            </g>
+          </g>
+          </svg>
+          </li>
+        </ul>
+      </footer>
+    </div>
+    
+  </body>
+</html>
