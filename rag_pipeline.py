@@ -10,7 +10,7 @@ with open("crawl/data.warc.gz","rb") as stream:
         if record.rec_type == 'response':
             html = record.content_stream().read()
             soup = BeautifulSoup(html,"html.parser")
-            for tag in soup(["script", "style", "nav", "footer", "header"]):
+            for tag in soup(["script", "style", "nav", "footer", "header"]): # Remove unnecessary tags
                 tag.decompose()
             body = soup.find("body")
             if body:
@@ -30,31 +30,32 @@ model = SentenceTransformer(
 embeddings = model.encode(
     chunks,
     batch_size=32,
-    normalize_embeddings=True,
+    normalize_embeddings=True, # Normalize embeddings for cosine similarity
     show_progress_bar=True
 )
 
-# Setup faiss as vector store 
+# Setup faiss as the vector store 
 dimension = embeddings.shape[1]
 
 index = faiss.IndexFlatIP(dimension)
 index.add(embeddings)
 
-# Create embeddings for query
+
 query = "Who originated the concept of a programmable computer?"
+# Create an embedding for query
 query_embedding = model.encode(
     [query],
-    normalize_embeddings=True
+    normalize_embeddings=True 
 )
 
-# Find best 4 matchings embeddings inside vector store to the query embedding
+# Find the 4 best matching embeddings inside the vector store
 distances, indices = index.search(query_embedding, k=4)
 context = []
 for i in indices[0]:
     context.append(chunks[i])
 context_joined = "\n\n".join(context)
 
-# Create LLM Prompt
+# Create LLM prompt
 prompt = f"""
 Answer the question using the provided context.
 
